@@ -1,0 +1,15 @@
+<h1>Admin Page</h1>
+
+<div *ngIf="isLoading$ | async">...Loading</div>
+
+
+<div *ngIf="error$ | async as err">{{err}}</div>
+
+
+<div *ngFor="let user of users$ | async">
+  <h3>{{user.name}}</h3>
+  <p>{{user.lastName}}</p>
+  <p>{{user.id}}</p>
+  <p>{{user.email}}</p>
+  <p>{{user.isUserAdmin}}</p>
+</div>
